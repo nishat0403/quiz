@@ -1,27 +1,85 @@
-# Quiz
+# Quiz App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Quiz is  a MEAN based online quiz application.
 
-## Development server
+  - Submit quiz
+  - Instant result
+  - Admin module
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> Please note that the app is not fully developed yet.
 
-## Code scaffolding
+### Tech
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Quiz uses a number of open source projects to work properly:
 
-## Build
+* [Angular] - HTML enhanced for web apps!
+* [Webstorm] - awesome web-based IDE
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [node.js] - evented I/O for the backend
+* [Express] - fast node.js network app framework [@tjholowaychuk]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Installation
 
-## Running unit tests
+Quiz requires [Node.js](https://nodejs.org/) v4+ to run.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the dependencies and devDependencies and start the server.
 
-## Running end-to-end tests
+```sh
+$ cd quiz
+$ npm install -d
+$ nodemon server
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run Angular in another terminal tab.
 
-## Further help
+```sh
+$ npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Development
+Open your favorite Terminal and run these commands.
+
+First Tab:
+```sh
+$ nodemon server
+```
+
+Second Tab:
+```sh
+$ npm start
+```
+### Todos
+
+ - Authentication for admin
+ - User scores
+ - Results for each user
+
+License
+----
+
+Apache 2.0
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+
+   [dill]: <https://github.com/joemccann/dillinger>
+   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
+   [john gruber]: <http://daringfireball.net>
+   [df1]: <http://daringfireball.net/projects/markdown/>
+   [markdown-it]: <https://github.com/markdown-it/markdown-it>
+   [Ace Editor]: <http://ace.ajax.org>
+   [node.js]: <http://nodejs.org>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>
+
+   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
+   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
+   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
+   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>

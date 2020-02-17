@@ -1,0 +1,14 @@
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Latest Result</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Your score: {{result.score | number : '1.2-2'}}%</h5>
+    <p class="card-text">You answered {{result.totalCorrect}} right options out of {{result.totalQuestions}} questions</p>
+    <a href="#" class="btn btn-primary">Take another quiz</a>
+  </div>
+</div>

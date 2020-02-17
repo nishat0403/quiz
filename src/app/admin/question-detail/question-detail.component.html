@@ -1,0 +1,11 @@
+<div class="card" *ngIf="question">
+  <div class="card-body">
+    <h5 class="card-title">{{question.text}}</h5>
+    <ul class="list-group">
+      <li [class.list-group-item-success]="option.isCorrect" *ngFor="let option of question.options"
+          class="list-group-item">{{option.text}}
+      </li>
+    </ul>
+    <button routerLink="/admin" class="btn btn-secondary mt-5">Go Back</button>
+  </div>
+</div>

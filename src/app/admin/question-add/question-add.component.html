@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Add a new Question</div>
+    {{ question|json }}
+
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+      <div class="input-group input-group-lg mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Title</span>
+        </div>
+        <input [(ngModel)]="question.text" name="text" type="text" class="form-control" placeholder="Enter the text of the question" aria-label="Title">
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Option 1</span>
+        </div>
+        <input [(ngModel)]="question.options[0]" name="option1" type="text" class="form-control" placeholder="Enter the correct answer here." aria-label="Title">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Option 2</span>
+        </div>
+        <input [(ngModel)]="question.options[1]" name="option2" type="text" class="form-control" aria-label="Title">
+      </div>
+      <div class="input-group input-group-sm input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Option 3</span>
+        </div>
+        <input [(ngModel)]="question.options[2]" name="option3" type="text" class="form-control" aria-label="Title">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Option 4</span>
+        </div>
+        <input [(ngModel)]="question.options[3]" name="option4" type="text" class="form-control" aria-label="Title">
+      </div>
+      <button class="btn btn-sm btn-success">Add Question</button>
+    </form>
+  </div>
+</div>

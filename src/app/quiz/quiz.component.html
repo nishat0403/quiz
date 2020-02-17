@@ -1,0 +1,17 @@
+<div class="card" *ngIf="question && !result">
+  <div class="card-body">
+    <h3>{{currentIndex + 1}}. {{question.text}}</h3>
+    <ul class="list-group">
+      <li id="option" class="list-group-item list-group-item-action"
+         [class.active]="selectedOptions.indexOf(option) != -1"
+         (click)="onOptionSelect(option)"
+         *ngFor="let option of question.options">{{option.text}}</li>
+    </ul>
+    <button (click)="previous()" class="btn btn-secondary m-2">Previous</button>
+    <button (click)="next()" class="btn btn-primary m-2">Next</button>
+    <button (click)="submit()" class="btn btn-danger m-2">Submit Test</button>
+  </div>
+</div>
+
+
+<app-result *ngIf="result" [result]="result"></app-result>

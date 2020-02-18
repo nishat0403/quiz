@@ -14,13 +14,13 @@ export class QuizComponent implements OnInit {
   question: Question
   currentIndex: number
   selectedOptions: Option[]
-  questionsCompleted: Set<number>
+  questionsCompleted: Set<string>
   result: Result
 
   constructor(private _quizService: QuizService) {
     this.currentIndex = 0
     this.selectedOptions = []
-    this.questionsCompleted = new Set<number>()
+    this.questionsCompleted = new Set<string>()
   }
 
   ngOnInit(): void {
@@ -45,10 +45,10 @@ export class QuizComponent implements OnInit {
   }
 
   onOptionSelect(option: Option) {
-    if (this.questionsCompleted.has(option.question_id)) {
+    if (this.questionsCompleted.has(this.question._id)) {
       let previousOption: Option
       for (let selectedOption of this.selectedOptions) {
-        if (selectedOption.question_id == option.question_id) {
+        if (this.question.options.indexOf(selectedOption) != -1) {
           previousOption = selectedOption
           break
         }
@@ -57,12 +57,12 @@ export class QuizComponent implements OnInit {
     }
 
     this.selectedOptions.push(option);
-    this.questionsCompleted.add(this.question.id)
+    this.questionsCompleted.add(this.question._id)
   }
 
   submit() {
     this._quizService
-      .submitQuizData(this.selectedOptions, [...this.questionsCompleted])
+      .submitQuizData(this.selectedOptions)
       .subscribe(data => {
         this.result = <Result> data
       })

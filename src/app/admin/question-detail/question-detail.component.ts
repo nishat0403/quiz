@@ -11,14 +11,11 @@ import {switchMap} from "rxjs/operators";
 })
 export class QuestionDetailComponent implements OnInit {
 
-  question: Question
+  @Input() question: Question
 
   constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService) {
   }
 
-  ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    this.quizService.getQuestionById(id).subscribe((question) => this.question = <Question> question)
-  }
+  ngOnInit(): void {}
 
 }

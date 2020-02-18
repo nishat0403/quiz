@@ -1,10 +1,12 @@
-<div class="card">
+<div class="card" *ngIf="questions">
   <div class="card-body">
     <div class="card-title">Your added questions</div>
-    <div class="list-group">
-      <a href="#" [routerLink]="['/admin/question', question.id]" *ngFor="let question of questions; let i = index" class="list-group-item list-group-item-action">
+    <ul class="list-group">
+      <li (click)="onQuestionClick(question)" *ngFor="let question of questions; let i = index" class="list-group-item list-group-item-action">
         {{i + 1}}. {{question.text}}
-      </a>
-    </div>
+      </li>
+    </ul>
   </div>
 </div>
+
+<app-question-detail [question]="question"></app-question-detail>

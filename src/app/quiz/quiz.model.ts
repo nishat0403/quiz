@@ -1,11 +1,10 @@
 export interface Option {
-  question_id: number
   text: string
   isCorrect: boolean
 }
 
 export interface Question {
-  id: number
+  _id: string
   text: string
   options: Option[]
 }

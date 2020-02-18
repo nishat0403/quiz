@@ -13,17 +13,17 @@ export class QuestionAddComponent implements OnInit {
   question: Question
 
   constructor(private router: Router, private quizService: QuizService) {
-    this.question = {text: '', id: 0, options: []}
+    this.question = {text: '', _id: '', options: []}
   }
 
   ngOnInit(): void {
   }
 
   submit(data: any) {
-    let option1: Option = {question_id: 0, text: data.option1, isCorrect: true}
-    let option2: Option = {question_id: 0, text: data.option2, isCorrect: false}
-    let option3: Option = {question_id: 0, text: data.option3, isCorrect: false}
-    let option4: Option = {question_id: 0, text: data.option4, isCorrect: false}
+    let option1: Option = {text: data.option1, isCorrect: true}
+    let option2: Option = {text: data.option2, isCorrect: false}
+    let option3: Option = {text: data.option3, isCorrect: false}
+    let option4: Option = {text: data.option4, isCorrect: false}
     let options: Option[] = this.shuffle([option1, option2, option3, option4])
     this.question.text = data.text
     this.question.options = options

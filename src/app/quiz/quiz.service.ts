@@ -19,10 +19,9 @@ export class QuizService {
     return this.http.get(this.baseUrl + 'quiz/' + id)
   }
 
-  submitQuizData(selectedOptions: Option[], questionsCompleted: number[]) {
+  submitQuizData(selectedOptions: Option[]) {
     return this.http.post(this.baseUrl + 'quiz', {
       selectedOptions: selectedOptions,
-      questionsCompleted: questionsCompleted
     })
   }
 

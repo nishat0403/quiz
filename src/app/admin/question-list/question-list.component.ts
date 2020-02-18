@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class QuestionListComponent implements OnInit {
 
   questions: Question[]
+  question: Question
 
   constructor(private _quizService: QuizService, private router: Router) {
   }
@@ -20,6 +21,6 @@ export class QuestionListComponent implements OnInit {
   }
 
   onQuestionClick(question: Question) {
-    this.router.navigate(['admin/question', question.id])
+    this.question = question
   }
 }

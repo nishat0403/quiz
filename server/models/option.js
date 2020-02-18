@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const OptionSchema = new mongoose.Schema({
+OptionSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
@@ -9,11 +9,10 @@ const OptionSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
     default: false
-  },
-  question: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Question"
   }
 })
 
-module.exports = mongoose.model('Option', OptionSchema);
+module.exports = {
+  Option: mongoose.model('Option', OptionSchema),
+  OptionSchema: OptionSchema
+}

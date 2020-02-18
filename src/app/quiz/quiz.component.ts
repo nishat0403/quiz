@@ -65,6 +65,7 @@ export class QuizComponent implements OnInit {
       .submitQuizData(this.selectedOptions)
       .subscribe(data => {
         this.result = <Result> data
+        console.log(data)
       })
   }
 }

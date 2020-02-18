@@ -10,10 +10,10 @@ import {Router} from "@angular/router";
 })
 export class QuestionAddComponent implements OnInit {
 
-  question: Question
+  question: { options: any[]; text: string }
 
   constructor(private router: Router, private quizService: QuizService) {
-    this.question = {text: '', _id: '', options: []}
+    this.question = {text: '', options: []}
   }
 
   ngOnInit(): void {

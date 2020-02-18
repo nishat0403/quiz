@@ -25,21 +25,24 @@ router.get('/:id', async function (req, res) {
   }
 })
 
-router.post('/', function (req, res) {
+router.post('/', async function (req, res) {
   const data = req.body
-  const result = calculateScore(data.selectedOptions)
-  res.status(200).json(result)
+  let totalCorrect = 0
+  data.selectedOptions.forEach((option, index) => {
+    if (option.isCorrect) totalCorrect += 1
+  })
+  const totalQuestions = await Question.countDocuments()
+  const score = totalCorrect / totalQuestions * 100;
+  res.status(200).json({score, totalCorrect, totalQuestions})
 })
 
 router.post('/question', async function (req, res) {
   try {
     const question = new Question(req.body)
     const result = await question.save()
-    console.log('Question saved: ', question)
-    res.status(200).json({'message': 'Question saved successfully!'})
+    res.status(200).json(question)
   } catch (error) {
     console.error(error.message)
-    res.status(error.statusCode).send({'message': error.message})
   }
 })
 

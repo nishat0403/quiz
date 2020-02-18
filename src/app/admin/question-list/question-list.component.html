@@ -1,12 +1,20 @@
-<div class="card" *ngIf="questions">
-  <div class="card-body">
-    <div class="card-title">Your added questions</div>
-    <ul class="list-group">
-      <li (click)="onQuestionClick(question)" *ngFor="let question of questions; let i = index" class="list-group-item list-group-item-action">
-        {{i + 1}}. {{question.text}}
-      </li>
-    </ul>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card" *ngIf="questions">
+      <div class="card-body">
+        <div class="card-title">Your added questions</div>
+        <ul class="list-group">
+          <li (click)="onQuestionClick(q)"
+              [class.active]="question == q"
+              *ngFor="let q of questions; let i = index"
+              class="list-group-item list-group-item-action">
+            {{i + 1}}. {{q.text}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <app-question-detail [question]="question"></app-question-detail>
   </div>
 </div>
-
-<app-question-detail [question]="question"></app-question-detail>

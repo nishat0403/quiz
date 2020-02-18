@@ -5,7 +5,7 @@ module.exports = async (selectedOptions) => {
   selectedOptions.forEach((option, index) => {
     if (option.isCorrect) totalCorrect += 1
   })
-  const totalQuestions = await Question.count()
+  const totalQuestions = await Question.countDocuments()
   const score = totalCorrect / totalQuestions * 100;
   return {score, totalCorrect, totalQuestions}
 }

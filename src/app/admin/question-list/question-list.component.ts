@@ -17,7 +17,10 @@ export class QuestionListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._quizService.getQuestions().subscribe((questions) => this.questions = <Question[]>questions)
+    this._quizService.getQuestions().subscribe((questions) => {
+      this.questions = <Question[]>questions
+      this.question = this.questions[0]
+    })
   }
 
   onQuestionClick(question: Question) {

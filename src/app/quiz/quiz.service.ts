@@ -25,7 +25,7 @@ export class QuizService {
     })
   }
 
-  addQuestion(question: Question) {
+  addQuestion(question: { options: any[]; text: string }) {
     return this.http.post(this.baseUrl + 'quiz/question', question)
   }
 }

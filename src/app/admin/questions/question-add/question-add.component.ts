@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Option, Question} from "../../quiz/quiz.model";
-import {QuizService} from "../../quiz/quiz.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {QuizService} from "../../../app.service";
 import {Router} from "@angular/router";
+import {Option} from "../../../../models/option";
+import {Question} from "../../../../models/question";
 
 @Component({
   selector: 'app-question-add',
@@ -24,7 +25,9 @@ export class QuestionAddComponent implements OnInit {
     let option2: Option = {text: data.option2, isCorrect: false}
     let option3: Option = {text: data.option3, isCorrect: false}
     let option4: Option = {text: data.option4, isCorrect: false}
+
     let options: Option[] = this.shuffle([option1, option2, option3, option4])
+
     this.question.text = data.text
     this.question.options = options
     this.quizService.addQuestion(this.question).subscribe((data) => {})

@@ -7,7 +7,7 @@
           <li (click)="onQuestionClick(q)"
               [class.active]="question == q"
               *ngFor="let q of questions; let i = index"
-              class="list-group-item list-group-item-action">
+              class="list-group-item list-group-item-action option">
             {{i + 1}}. {{q.text}}
           </li>
         </ul>

@@ -10,13 +10,15 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
   .catch((error) => console.error('Database connection error', error))
 
 // Routes
-const quizRoutes = require('./routes/quiz')
+const quiz = require('./routes/quiz')
+const question = require('./routes/question')
 
 // Middleware
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use('/quiz', quizRoutes)
+app.use('/quiz', quiz)
+app.use('/question', question)
 
 const port = process.env.PORT || 5000
 

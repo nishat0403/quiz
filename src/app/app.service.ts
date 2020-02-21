@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Option, Question} from "./quiz.model";
+import {Option} from "../models/option";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,11 @@ export class QuizService {
   }
 
   getQuestions() {
-    return this.http.get(this.baseUrl + 'quiz');
+    return this.http.get(this.baseUrl + 'question');
   }
 
   getQuestionById(id: number) {
-    return this.http.get(this.baseUrl + 'quiz/' + id)
+    return this.http.get(this.baseUrl + 'question/' + id)
   }
 
   submitQuizData(selectedOptions: Option[]) {
@@ -26,6 +26,6 @@ export class QuizService {
   }
 
   addQuestion(question: { options: any[]; text: string }) {
-    return this.http.post(this.baseUrl + 'quiz/question', question)
+    return this.http.post(this.baseUrl + 'question', question)
   }
 }

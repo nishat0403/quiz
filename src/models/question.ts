@@ -1,7 +1,4 @@
-export interface Option {
-  text: string
-  isCorrect: boolean
-}
+import {Option} from "./option";
 
 export interface Question {
   _id: string

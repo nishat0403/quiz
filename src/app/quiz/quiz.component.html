@@ -2,7 +2,7 @@
   <div class="card-body">
     <h3>{{currentIndex + 1}}. {{question.text}}</h3>
     <ul class="list-group">
-      <li id="option" class="list-group-item list-group-item-action"
+      <li class="list-group-item list-group-item-action option"
          [class.active]="selectedOptions.indexOf(option) != -1"
          (click)="onOptionSelect(option)"
          *ngFor="let option of question.options">{{option.text}}</li>

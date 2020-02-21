@@ -1,5 +1,6 @@
 <div class="card" *ngIf="question && !result">
   <div class="card-body">
+    <div class="card-title float-right"><strong>{{currentIndex + 1}}/{{this.questions.length}}</strong></div>
     <h3>{{currentIndex + 1}}. {{question.text}}</h3>
     <ul class="list-group">
       <li class="list-group-item list-group-item-action option"

@@ -13,5 +13,11 @@
   </div>
 </div>
 
+<div class="card" *ngIf="questions.length <= 0">
+  <div class="card-body">
+    <h3>No questions in quiz</h3>
+  </div>
+</div>
+
 
 <app-result *ngIf="result" [result]="result"></app-result>

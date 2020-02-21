@@ -26,4 +26,14 @@ export class QuestionListComponent implements OnInit {
   onQuestionClick(question: Question) {
     this.question = question
   }
+
+  onDelete(question: Question) {
+    this._quizService.deleteQuestion(question).subscribe((data) => {
+      const index = this.questions.indexOf(question, 0);
+      if (index > -1) {
+        this.questions.splice(index, 1);
+        this.question = null
+      }
+    })
+  }
 }

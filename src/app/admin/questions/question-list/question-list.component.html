@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <div class="card" *ngIf="questions">
+    <div class="card" *ngIf="questions.length > 0">
       <div class="card-body">
         <div class="card-title">Your added questions</div>
         <ul class="list-group">
@@ -9,8 +9,17 @@
               *ngFor="let q of questions; let i = index"
               class="list-group-item list-group-item-action option">
             {{i + 1}}. {{q.text}}
+
+            <span *ngIf="question == q" class="float-right">
+              <button (click)="onDelete(question)" class="btn btn-sm btn-danger">Delete</button>
+            </span>
           </li>
         </ul>
+      </div>
+    </div>
+    <div class="card" *ngIf="questions.length <= 0">
+      <div class="card-body">
+        <div class="card-title">No questions added yet.</div>
       </div>
     </div>
   </div>

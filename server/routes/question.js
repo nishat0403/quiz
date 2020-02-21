@@ -38,12 +38,15 @@ router.post('/', async function (req, res) {
 
 // Delete a question with {id}
 router.delete('/:id', async function (req, res) {
-
+  const id = req.params.id
+  const question = await Question.findByIdAndDelete(id)
+  res.status(200).json(question)
 })
 
 // Update a question with {id}
 router.put('/:id', async function (req, res) {
-
+  const id = req.params.id
+  const question = await Question.findById(id)
 })
 
 module.exports = router

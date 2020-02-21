@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Option} from "../models/option";
+import {Question} from "../models/question";
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class QuizService {
 
   addQuestion(question: { options: any[]; text: string }) {
     return this.http.post(this.baseUrl + 'question', question)
+  }
+
+  deleteQuestion(question: Question) {
+    return this.http.delete(this.baseUrl + 'question/' + question._id)
   }
 }

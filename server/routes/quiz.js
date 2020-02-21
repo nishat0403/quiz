@@ -1,8 +1,5 @@
 const express = require('express')
-const calculateScore = require('../helpers/calculateScore')
 const Question = require('../models/question')
-const Option = require('../models/option')
-const data = require('../data/quiz.json')
 
 const router = express.Router()
 
@@ -19,6 +16,7 @@ router.get('/:id', async function (req, res) {
   try {
     const id = req.params.id
     const question = await Question.findById(id)
+    if (!question) res.status(404).send('Question not found')
     res.status(200).json(question)
   } catch (e) {
     console.log(e.message)

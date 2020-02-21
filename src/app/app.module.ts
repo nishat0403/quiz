@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {QuizComponent} from './quiz/quiz.component';
-import {ResultComponent} from './result/result.component';
+import {ResultComponent} from './quiz/result/result.component';
 import {QuizService} from "./app.service";
 import {HttpClientModule} from "@angular/common/http";
 import {AdminComponent} from "./admin/admin.component";

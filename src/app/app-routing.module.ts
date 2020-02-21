@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {QuizComponent} from "./quiz/quiz.component";
-import {ResultComponent} from "./result/result.component";
+import {ResultComponent} from "./quiz/result/result.component";
 import {AdminComponent} from "./admin/admin.component";
 import {QuestionAddComponent} from "./admin/questions/question-add/question-add.component";
 

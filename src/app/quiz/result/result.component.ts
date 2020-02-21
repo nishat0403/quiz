@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Result} from "./result.model";
+import {Result} from "../../../models/result";
 
 @Component({
   selector: 'app-result',
